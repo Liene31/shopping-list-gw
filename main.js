@@ -7,8 +7,6 @@ const addBtn = document.getElementById("add-btn");
 let itemArray = [];
 const savedItems = JSON.parse(localStorage.getItem("listItems"));
 
-let itemId = 0;
-
 if (savedItems) {
   itemArray = savedItems;
   renderHtml();
@@ -26,11 +24,12 @@ function renderHtml() {
   let itemsHtml = "";
 
   itemArray.forEach((element) => {
-    itemId++;
-    itemsHtml += `<li data-itemid="${itemId}"">${element}</li>`;
+    itemsHtml += `<li>${element}</li>`;
   });
 
   ulEL.innerHTML = itemsHtml;
+
+  console.log(itemArray);
 }
 
 function saveItemsToLocal() {
@@ -51,19 +50,18 @@ addBtn.addEventListener("click", () => {
     populateArray(item);
   }
 
-  console.log(itemArray);
-  console.log(itemArray.indexOf(item));
-
   saveItemsToLocal();
   renderHtml();
   cleanInputField();
 });
 
-// Delete Items from the list
-
-document.addEventListener("click", (e) => {
-  console.log(e.target);
-  console.log(itemArray);
+// Delete clicked item
+ulEL.addEventListener("click", (e) => {
+  const clickedEl = e.target.textContent;
+  const itemIndex = itemArray.indexOf(clickedEl);
+  //removes the clicked item
+  itemArray.splice(itemIndex, 1);
+  //stringify the array back to the local storage
+  saveItemsToLocal();
+  renderHtml();
 });
-
-// localStorage.clear();
