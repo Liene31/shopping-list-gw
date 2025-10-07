@@ -2,10 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  background: url(./images/background.png);
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  border: 2px solid red;
 }
+
+ul {
+  display: flex;
+  gap: 1rem;
+}
+
+/* #171717 --> black*/
+/* #444444 --> grey */
+/* #DA0037 --> red */
+/* #EDEDED --> light grey*/
