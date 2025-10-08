@@ -5,11 +5,6 @@
   list-style-type: none;
 }
 
-body {
-  background: url(./images/background.png);
-  width: 100%;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -17,11 +12,20 @@ body {
   max-width: 700px;
   margin: 0 auto;
   border: 2px solid red;
+  gap: 1rem;
 }
 
 ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+
+  li {
+    background-color: bisque;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
 }
 
 /* #171717 --> black*/

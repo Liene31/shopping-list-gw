@@ -40,12 +40,23 @@ function isOnList(item) {
   return itemArray.includes(item);
 }
 
+function inputOnEnter() {
+  textInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addBtn.click();
+    }
+  });
+}
+
+inputOnEnter();
+
 // Add Button
 addBtn.addEventListener("click", () => {
   const item = textInput.value.toLowerCase();
 
   if (isOnList(item)) {
-    messagePara.textContent = `${item} is already on your list`;
+    messagePara.textContent = `*${item} is already on your list`;
   } else {
     populateArray(item);
   }
