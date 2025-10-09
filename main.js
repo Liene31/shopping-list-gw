@@ -24,7 +24,7 @@ function renderHtml() {
   let itemsHtml = "";
 
   itemArray.forEach((element) => {
-    itemsHtml += `<li>${element}</li>`;
+    itemsHtml += `<li class="button-55">${element}</li>`;
   });
 
   ulEL.innerHTML = itemsHtml;

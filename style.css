@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
   background: url(./images/background.png);
   background-repeat: no-repeat;
@@ -28,7 +28,8 @@ ul {
   gap: 1rem;
 
   li {
-    background-color: bisque;
+    background-color: #4b0102;
+    color: bisque;
     padding: 0.5rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
