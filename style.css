@@ -23,6 +23,37 @@ body {
   border-radius: 0.7rem;
 }
 
+input {
+  padding: 0.625rem 0.938rem;
+  border: 2px solid #b22222;
+  border-radius: 8px;
+  background-color: #00000099;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+
+  &:focus {
+    border-color: #ff4500;
+    box-shadow: 0 0 10px #ff4500;
+  }
+}
+
+button {
+  padding: 0.625rem 0.938rem;
+  margin-left: 10px;
+  background-color: #8b0000;
+  color: #fff;
+  border: 2px solid #b22222;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #a52a2a;
+    box-shadow: 0 0 10px #ff4500;
+  }
+}
+
 .message-to-user {
   color: bisque;
 }
@@ -33,10 +64,17 @@ ul {
   gap: 1rem;
 
   li {
-    background-color: #4b0102;
-    color: bisque;
-    padding: 0.5rem 1.2rem;
-    border-radius: 0.4rem;
+    background-color: #4b0000;
+    color: #fff;
+    border: 1px solid #8b0000;
+    border-radius: 8px;
+    padding: 8px 16px;
+
     cursor: pointer;
+
+    &:hover {
+      background-color: #660000;
+      box-shadow: 0 0 6px #ff4500;
+    }
   }
 }
