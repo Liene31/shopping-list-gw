@@ -23,6 +23,10 @@ body {
   border-radius: 0.7rem;
 }
 
+.message-to-user {
+  color: bisque;
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;

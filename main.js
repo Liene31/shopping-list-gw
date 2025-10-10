@@ -1,5 +1,5 @@
 const textInput = document.getElementById("text-input");
-const messagePara = document.getElementById("message-item-exist");
+const messagePara = document.getElementById("message-to-user");
 const ulEL = document.getElementById("ul-eL");
 const listEl = document.querySelectorAll(".list-item");
 const addBtn = document.getElementById("add-btn");
@@ -28,8 +28,6 @@ function renderHtml() {
   });
 
   ulEL.innerHTML = itemsHtml;
-
-  console.log(itemArray);
 }
 
 function saveItemsToLocal() {
@@ -55,10 +53,15 @@ inputOnEnter();
 addBtn.addEventListener("click", () => {
   const item = textInput.value.toLowerCase();
 
-  if (isOnList(item)) {
-    messagePara.textContent = `*${item} is already on your list`;
+  if (item === "") {
+    messagePara.textContent = `*Enter a valid value`;
   } else {
-    populateArray(item);
+    if (isOnList(item)) {
+      messagePara.textContent = `*${item} is already on your list`;
+    } else {
+      messagePara.textContent = "";
+      populateArray(item);
+    }
   }
 
   saveItemsToLocal();
@@ -72,6 +75,9 @@ ulEL.addEventListener("click", (e) => {
   const itemIndex = itemArray.indexOf(clickedEl);
   //removes the clicked item
   itemArray.splice(itemIndex, 1);
+  if (!itemArray.length) {
+    messagePara.textContent = "Nothing in yet......😞";
+  }
   //stringify the array back to the local storage
   saveItemsToLocal();
   renderHtml();
