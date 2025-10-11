@@ -75,9 +75,7 @@ ulEL.addEventListener("click", (e) => {
   const itemIndex = itemArray.indexOf(clickedEl);
   //removes the clicked item
   itemArray.splice(itemIndex, 1);
-  if (!itemArray.length) {
-    messagePara.textContent = "Nothing in yet......😞";
-  }
+
   //stringify the array back to the local storage
   saveItemsToLocal();
   renderHtml();
