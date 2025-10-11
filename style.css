@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Cinzel", serif;
+  height: 100vh;
 }
 
 .container {
@@ -20,7 +21,6 @@ body {
   max-width: 350px;
   margin: 2rem auto;
   gap: 1rem;
-  /* height: 100vh; */
 }
 
 form {
